@@ -1,0 +1,528 @@
+/* ===============================
+===========  Css reset  ============
+===================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==================================
+===========  End Css reset  ============
+===================================== */
+
+:root {
+  --Very-Dark-Blue: hsl(243, 87%, 12%);
+  --Desaturated-Blue: hsl(238, 22%, 44%);
+  --Bright-Blue: hsl(224, 93%, 58%);
+  --Moderate-Cyan: hsl(170, 45%, 43%);
+  --Light-Grayish-Blue: hsl(240, 75%, 98%);
+  --Light-Gray: hsl(0, 0%, 75%);
+
+  --ff-raleway: "Raleway", sans-serif;
+  --ff-open-sans: "Open Sans", sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  background: #fff;
+  margin-inline: auto;
+  font-family: var(--ff-open-sans);
+}
+
+h2 {
+  font-weight: 700;
+  font-family: var(--ff-raleway);
+}
+
+p {
+  font-size: 0.95rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =======================   Global   ========================== */
+.container {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+}
+
+input,
+.cta {
+  width: 100%;
+  font-family: var(--ff-raleway);
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+}
+
+input {
+  color: var(--Light-Gray);
+  padding: 0.7rem 1rem;
+  outline: 0;
+}
+
+input:hover,
+input:focus {
+  color: var(--Very-Dark-Blue);
+}
+
+.cta {
+  background: var(--Bright-Blue);
+  color: #fff;
+  padding: 0.7rem;
+  font-weight: 700;
+  border: none;
+  transition: background 150ms linear;
+
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta:hover,
+.cta:focus {
+  cursor: pointer;
+  background: hsl(224, 93%, 65%);
+}
+
+/* =======================   Header   ========================== */
+.container-header {
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.header-logo {
+  width: 85px;
+}
+
+.header-nav__list {
+  gap: 1rem;
+}
+
+.header-nav__list > li > a {
+  font-family: var(--ff-raleway);
+  font-size: 0.9rem;
+  color: var(--Very-Dark-Blue);
+}
+
+/* =======================   Main   ========================== */
+main {
+  text-align: center;
+}
+
+.section-detail > * + * {
+  margin-top: 2rem;
+}
+
+.section-first,
+.section-secound {
+  padding: 4rem 2rem;
+}
+
+/* == section-first == */
+
+.section-first {
+  gap: 2rem;
+}
+
+.section-first__title,
+.section-first__subtitle {
+  color: var(--Very-Dark-Blue);
+}
+
+.section-first__title {
+  font-size: 1.4rem;
+}
+
+.get-started {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-first__input {
+  border: 1px solid var(--Moderate-Cyan);
+}
+
+.title {
+  font-size: 1.1rem;
+}
+
+/* == section-secound == */
+
+.section-secound {
+  background: var(--Light-Grayish-Blue);
+  margin-top: 3rem;
+  position: relative;
+
+  gap: 4rem;
+}
+
+.section-secound::before {
+  content: "";
+  background-image: url(./images/bg-curve-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: -38px;
+  left: 0;
+  z-index: -1;
+}
+
+.section-secound__subtitle-1,
+.section-secound__subtitle-2 {
+  text-align: left;
+}
+
+.section-secound__subtitle-2 {
+  margin-top: 1rem;
+}
+
+.how-it-works {
+  width: max-content;
+  margin-inline: auto;
+  color: var(--Moderate-Cyan);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--Moderate-Cyan);
+  padding: 0.2rem 0;
+  transition: opacity 150ms ease-in-out;
+
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.how-it-works:hover,
+.how-it-works:focus {
+  opacity: 0.5;
+}
+
+blockquote {
+  text-align: left;
+  background: #fff;
+  margin: 0 1rem;
+  padding: 1.5rem 0.7rem 1.5rem 1.5rem;
+  border-radius: 0.3rem;
+  font-family: var(--ff-raleway);
+
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+blockquote > * + * {
+  margin-top: 1rem;
+}
+
+.quote-from {
+  gap: 0.5rem;
+}
+
+.quote {
+  font-size: 0.8rem;
+}
+
+.person-img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.about {
+  font-size: 0.7rem;
+}
+
+/* == section-early-access == */
+
+.section-early-access {
+  gap: 2rem;
+
+  background: var(--Desaturated-Blue);
+  color: var(--Light-Grayish-Blue);
+  padding: 4rem 2.5rem;
+}
+
+.section-early-access__subtitle {
+  margin-top: 1rem;
+}
+
+.get-started-free {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.section-early-access__input {
+  border: none;
+}
+
+.section-early-access__btn {
+  margin-top: 0.5rem;
+}
+
+/* =======================   Footer   ========================== */
+
+footer {
+  background: var(--Very-Dark-Blue);
+  color: var(--Light-Grayish-Blue);
+  padding: 4rem 2rem;
+}
+
+.footer-logo {
+  margin-bottom: 2.5rem;
+}
+
+.main-footer {
+  gap: 2.5rem;
+}
+
+.phone,
+.email {
+  gap: 1rem;
+}
+
+.email {
+  margin-top: 1rem;
+}
+
+.footer-nav__list > li > a {
+  color: var(--Light-Grayish-Blue);
+  transition: color 100ms linear;
+}
+
+.footer-nav__list > li > a:hover {
+  color: var(--Bright-Blue);
+}
+
+.social-icons {
+  margin-inline: auto;
+  /* margin-bottom: 2rem; */
+}
+
+ion-icon {
+  border: 1px solid var(--Light-Grayish-Blue);
+  border-radius: 50%;
+  padding: 0.3rem;
+  margin-inline: 0.2rem;
+  transition: color 100ms linear, border 100ms linear;
+}
+
+ion-icon:hover {
+  cursor: pointer;
+  color: var(--Bright-Blue);
+  border: 1px solid var(--Bright-Blue);
+}
+
+/* ======================  Media quaries   ======================= */
+
+@media only screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+  }
+
+  .section-first,
+  .section-secound {
+    gap: 5rem;
+  }
+
+  .section-early-access {
+    gap: 10rem;
+  }
+
+  .section-detail {
+    grid-column: 1 / 3;
+    grid-row: 1 /2;
+  }
+
+  .section-img {
+    grid-column: 3 / 5;
+    grid-row: 1 /2;
+  }
+
+  .section-early-access__detail {
+    grid-column: 1 / 3;
+  }
+
+  .get-started-free {
+    grid-column: 3 / 5;
+  }
+
+  /* ================================================================ */
+
+  h1 {
+    font-family: var(--ff-raleway);
+  }
+
+  .container-header,
+  .section-first,
+  .section-secound,
+  .section-early-access,
+  footer {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+
+  .container-header {
+    padding: 3rem;
+  }
+
+  .header-logo,
+  .footer-logo {
+    width: 130px;
+  }
+
+  .header-nav__list {
+    gap: 1.8rem;
+  }
+
+  main {
+    text-align: left;
+  }
+
+  .section-first__title,
+  .title {
+    font-size: 2rem;
+  }
+
+  .get-started {
+    flex-direction: row;
+  }
+
+  .section-first__input {
+    flex: 0.7;
+  }
+
+  .get-started-btn {
+    flex: 0.3;
+  }
+
+  .section-secound {
+    margin-top: 10rem;
+  }
+
+  .section-secound::before {
+    background-image: url(./images/bg-curve-desktop.svg);
+    height: 100px;
+    top: -75px;
+  }
+
+  .how-it-works {
+    margin-inline: 0;
+  }
+
+  blockquote {
+    margin: 0;
+    width: 60%;
+  }
+
+  .section-early-access__btn {
+    width: 45%;
+  }
+
+  .main-footer {
+    align-items: flex-start;
+  }
+
+  .footer-nav-1,
+  .footer-nav-2 {
+    justify-self: center;
+  }
+
+  .contact-info {
+    justify-self: flex-start;
+  }
+
+  .social-icons {
+    margin: 0;
+    justify-self: flex-start;
+  }
+}
